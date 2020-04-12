@@ -1,6 +1,7 @@
 FROM ubuntu
 MAINTAINER "MAHESH & JK"
 
+# Modifed the merged comments from both branches
 RUN apt update && apt install -y default-jdk && apt install -y wget
 RUN useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
 
