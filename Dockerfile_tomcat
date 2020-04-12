@@ -1,0 +1,13 @@
+FROM ubuntu
+MAINTAINER "MAHESH & JK"
+
+RUN apt update && apt install -y default-jdk && apt install -y wget
+RUN useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+
+RUN wget http://apachemirror.wuchna.com/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz -P /tmp
+RUN tar xf /tmp/apache-tomcat-9.0.34.tar.gz -C /opt/tomcat
+
+
+EXPOSE 8080
+#ADD 
+#ENTRYPOINT
