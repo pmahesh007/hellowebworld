@@ -1,6 +1,6 @@
 node {
   stage('SCM Checkout') {
-        git 'https://github.com/jkjit/hellowebworld.git'
+        git branch: 'qabranch', url:'https://github.com/jkjit/hellowebworld.git'
         }
    stage('Compile Project'){
      //Get MAVEN HOME PATH
