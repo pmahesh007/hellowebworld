@@ -9,7 +9,7 @@ node {
        }
   stage('Docker build'){
     //Building docker image from git
-    sh "docker build -t hellowebworld ."
+    sh "docker build -t hellowebworld:latest -t hellowebworld:${currentBuild.number} ."
   }
   
   stage('Email Notification'){
