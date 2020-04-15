@@ -16,7 +16,7 @@ node {
     
     sh """
 
-      docker login -u jkckdocker -p $DOCKER_PWD.
+      docker login -u jkckdocker -p ${DOCKER_PWD}
       docker push jkckdocker/hellowebworld:${currentBuild.number}
       docker push jkckdocker/hellowebworld:latest
       
