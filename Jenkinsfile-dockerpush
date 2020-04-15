@@ -21,7 +21,10 @@ node {
     """    
   }
   stage('Clean up'){
-    sh "docker rmi \$(docker images | grep jkckdocker/hellowebworld)"
+    sh """
+      docker rmi jkckdocker/hellowebworld:${currentBuild.number}
+      docker rmi jkckdocker/hellowebworld:latest
+      """
   }
 
 }
