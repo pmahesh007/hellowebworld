@@ -12,13 +12,16 @@ node {
     sh "docker build -t jkckdocker/hellowebworld:latest -t jkckdocker/hellowebworld:${currentBuild.number} ."
   }
   stage('Docker Push'){
-    sh """
+  withCredentials([string(credentialsId: 'DOCKER_PWD', variable: 'DOCKER_PWD')]) {
     
-      docker login -u jkckdocker -p jkdocker.
+    sh """
+
+      docker login -u jkckdocker -p $DOCKER_PWD.
       docker push jkckdocker/hellowebworld:${currentBuild.number}
       docker push jkckdocker/hellowebworld:latest
       
-    """    
+    """ 
+}   
   }
   stage('Clean up'){
     sh """
