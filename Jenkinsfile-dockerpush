@@ -22,7 +22,8 @@ node {
   }
   stage('Clean up'){
     sh """
-	docker rmi jkckdocker/hellowebworld:${currentBuild.number},jkckdocker/hellowebworld:latest
+	docker rmi jkckdocker/hellowebworld:${currentBuild.number}
+	docker rmi jkckdocker/hellowebworld:latest
 
 	"""
   }
