@@ -16,8 +16,15 @@ node {
     
       docker login -u jkckdocker -p jkdocker.
       docker push jkckdocker/hellowebworld:${currentBuild.number}
+      docker push jkckdocker/hellowebworld:latest
       
     """    
+  }
+  stage('Clean up'){
+    sh """
+	docker rmi jkckdocker/hellowebworld:${currentBuild.number},jkckdocker/hellowebworld:latest
+
+	"""
   }
 
 }
