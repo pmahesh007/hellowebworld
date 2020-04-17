@@ -55,7 +55,7 @@ pipeline {
             stage('FT'){
                 steps {
                 // 
-                echo "Starting Functional Testing" 
+                sh "pytest automation/"
                 }
             }
         }
