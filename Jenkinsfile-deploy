@@ -54,8 +54,11 @@ pipeline {
 
             stage('FT'){
                 steps {
-                // 
-                sh "pytest automation/"
+                sh """
+                    pip3 install selenium
+                    pytest automation/
+                """
+
                 }
             }
         }
