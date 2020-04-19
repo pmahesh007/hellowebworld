@@ -1,4 +1,4 @@
-py==1.4.32
-pytest==3.0.5
-selenium==3.0.2
+py==1.8.1
+pytest==5.4.1
+selenium==3.141.0
 
