@@ -2,7 +2,7 @@ import selenium.webdriver
 from selenium import webdriver
 from selenium.webdriver import firefox
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 import pytest
 
@@ -11,10 +11,10 @@ class TestLandingPage():
 
     def test_check_title(self):
         print("First step")
-        options = Options()
-        options.add_argument("--headless")
+        ffopt = FirefoxOptions()
+        ffopt.add_argument("--headless")
 
-        self.driver = webdriver.Firefox(options=options)
+        self.driver = webdriver.Firefox(options=ffopt)
         print("Second Step")
         url = "http://localhost:8085"
         driver = self.driver
