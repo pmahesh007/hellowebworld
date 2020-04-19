@@ -54,10 +54,14 @@ pipeline {
 
             stage('FT'){
                 steps {
-                sh """
-                    pip3 install selenium
-                    pytest automation/
-                """
+
+                    sh """
+                    virtualenv -p /usr/bin/python3.6 jk-venv
+                    . jk-venv/bin/activate
+                    python -V
+                    pip install -r requirements.txt
+                    pytest -sv automation
+                    """
 
                 }
             }
