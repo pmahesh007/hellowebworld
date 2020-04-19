@@ -9,21 +9,24 @@ import pytest
 class TestLandingPage():
 
     def test_check_title(self):
+        print("First step")
         self.driver = webdriver.Firefox()
+        print("Second Step")
         url = "http://localhost:8085"
         driver = self.driver
         driver.get(url)
+        print("THird step")
         print("Web Page title is : {}".format(driver.title))
         assert "Hello World" == driver.title
         driver.close()
-
-    def test_check_content(self):
-        self.driver = webdriver.Firefox()
-        url = "http://localhost:8085"
-        driver = self.driver
-        driver.get(url)
-        assert "12Apr2020" in driver.page_source
-        driver.close()
+    #
+    # def test_check_content(self):
+    #     self.driver = webdriver.Firefox()
+    #     url = "http://localhost:8085"
+    #     driver = self.driver
+    #     driver.get(url)
+    #     assert "12Apr2020" in driver.page_source
+    #     driver.close()
 
 # if __name__ == '__main__':
 #     main()
